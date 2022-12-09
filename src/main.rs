@@ -6,11 +6,13 @@ use std::{
 use days::day_01;
 use days::day_02;
 use days::day_03;
+use days::day_04;
 
 mod days {
     pub mod day_01;
     pub mod day_02;
     pub mod day_03;
+    pub mod day_04;
 }
 fn main() {
     let pos = SeekFrom::Start(0);
@@ -37,4 +39,12 @@ fn main() {
     day3_file.seek(pos).unwrap();
     let result3_2 = day_03::day_03_part2(&day3_file);
     println!("Day 3, part2: {}", result3_2);
+
+    // DAY 4
+    let mut day4_file = File::open("src/days/input_day4.txt").unwrap();
+    let result4_1 = day_04::day_04_part1(&day4_file);
+    println!("Day 4, part1: {}", result4_1);
+    day4_file.seek(pos).unwrap();
+    let result4_2 = day_04::day_04_part2(&day4_file);
+    println!("Day 4, part2: {}", result4_2);
 }
